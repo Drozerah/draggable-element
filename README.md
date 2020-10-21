@@ -1,6 +1,6 @@
 # Draggable Element
 
-> Create a Draggable DOM Element
+> Prototyping a Draggable DOM Element
 
 
 Table of Contents
@@ -13,7 +13,6 @@ Table of Contents
 
 List of Packages
 ----------------
-
 
 __devDependencies__
 
@@ -39,4 +38,4 @@ Author
 License
 -------
 
-- [MIT](https://github.com/Drozerah/dep-to-doc-cli/blob/master/LICENSE) © Thomas G. aka Drozerah
+- [MIT](https://github.com/Drozerah/draggable-element/blob/master/LICENSE) © Thomas G. aka Drozerah

@@ -1,5 +1,5 @@
 {
-  "name": "drag",
+  "name": "draggable-element",
   "version": "1.0.0",
   "description": "> Create a Draggable DOM Element",
   "main": "app.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Drozerah/dev-prototype.git"
+    "url": "git+https://github.com/Drozerah/draggable-element.git"
   },
   "keywords": [],
   "author": "Thomas G. aka Drozerah <drozerah@gmail.com> (https://github.com/Drozerah)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Drozerah/dev-prototype/issues"
+    "url": "https://github.com/Drozerah/draggable-element/issues"
   },
-  "homepage": "https://github.com/Drozerah/dev-prototype#readme",
+  "homepage": "https://github.com/Drozerah/draggable-element.git",
   "devDependencies": {
     "eslint": "^7.11.0",
     "eslint-config-standard": "^14.1.1",
