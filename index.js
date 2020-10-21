@@ -1,5 +1,5 @@
 // get the element to drag
-const element = document.querySelector('.element')
+const element = document.querySelector('.element_1')
 // turn the element to a draggable element
 dragElement(element)
 // define element to drag
