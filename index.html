@@ -22,7 +22,19 @@
         <div>Draggable Element 3</div>
         <span class="material-icons dragIndicator">drag_indicator</span>
     </div>
+
+    <div class="element_4 draggable noselect">
+        <div>Draggable Element 4</div>
+        <span class="material-icons dragIndicator">drag_indicator</span>
+    </div>
     <script src="index.js"></script>
     <script src="draggable.js"></script>
+    <script>
+        new Draggable(document.querySelector('.element_2')).init()
+        new Draggable(document.querySelector('.element_3')).init()
+        new Draggable(document.querySelector('.element_4'))
+        .init()
+        .startAt({ x: 350, y: 350 })
+    </script>
 </body>
 </html>

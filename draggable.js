@@ -82,12 +82,33 @@ class Draggable {
     document.onmousemove = null
   }
 
+  /**
+   * startAt
+   * - set the x and y start position of the draggable element
+   * @param {Object} option The starting x and y position
+   */
+  startAt (option) {
+    if (!option) throw new Error('missing Object parameter')
+    this.element.style.left = option.x + 'px'
+    this.element.style.top = option.y + 'px'
+  }
+
+  /**
+   * init
+   * - initialize a Draggable element
+   * - this method is chainable with the startAt method
+   * @returns {this} the draggable ement
+   */
   init () {
     // console.log('ƒ Draggable call init') // !DEBUG
     // console.log(this.element)
     this.element.onmousedown = this.DragOnMouseDown.bind(this)
+    return this
   }
 }
 
-new Draggable(document.querySelector('.element_2')).init()
-new Draggable(document.querySelector('.element_3')).init()
+// new Draggable(document.querySelector('.element_2')).init()
+// new Draggable(document.querySelector('.element_3')).init()
+// new Draggable(document.querySelector('.element_4'))
+//   .init()
+//   .startAt({ x: 350, y: 350 })
