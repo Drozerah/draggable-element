@@ -51,6 +51,11 @@ body h1 {
   margin-top: 50px;
 }
 
+body h1 span {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
 body footer {
   margin-top: auto;
   margin-bottom: 40px;
