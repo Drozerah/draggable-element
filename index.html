@@ -5,36 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/draggable.css">
     <!-- IE11 polyfill -->
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CArray.from%2CArray.prototype.forEach%2CArray.prototype.filter"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="element_1 draggable noselect">
-        <div>Draggable Element 1</div>
-        <span class="material-icons dragIndicator">drag_indicator</span>
-    </div>
-
-    <div class="element_2 draggable noselect">
-        <div>Draggable Element 2</div>
-        <span class="material-icons dragIndicator">drag_indicator</span>
-    </div>
-
-    <div class="element_3 draggable noselect">
-        <div>Draggable Element 3</div>
-        <span class="material-icons dragIndicator">drag_indicator</span>
-    </div>
-
-    <div class="element_4 draggable noselect">
-        <div>Draggable Element 4</div>
-        <span class="material-icons dragIndicator">drag_indicator</span>
-    </div>
-    <script src="index.js"></script>
+    <main>
+        <a href="https://github.com/Drozerah/draggable-element" class="ribbon" target="_blank" rel="noopener noreferrer">Coded by Drozerah</a>
+        <h1>Draggable.js</h1>
+        <div class="element_1 draggable noselect">
+            <div>Draggable Element 1</div>
+            <span class="material-icons dragIndicator">drag_indicator</span>
+        </div>
+    
+        <div class="element_2 draggable noselect">
+            <div>Draggable Element 2</div>
+            <span class="material-icons dragIndicator">drag_indicator</span>
+        </div>
+    
+        <div class="element_3 draggable noselect">
+            <div>Draggable Element 3</div>
+            <span class="material-icons dragIndicator">drag_indicator</span>
+        </div>
+    </main>
+    <footer>
+    </footer>
     <script type="module">
         import Draggable from './draggable.js'
+        new Draggable(document.querySelector('.element_1')).init()
         new Draggable(document.querySelector('.element_2')).init()
-        new Draggable(document.querySelector('.element_3')).init()
-        new Draggable(document.querySelector('.element_4'))
+        new Draggable(document.querySelector('.element_3'))
             .init()
             .isLimited(false)
             .startAt({ x: 350, y: 350 })

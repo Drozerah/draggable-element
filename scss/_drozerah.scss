@@ -1,0 +1,18 @@
+/* DROZERAH */
+
+.ribbon {
+  position: absolute;
+  top: 3.2em;
+  left: -3.7em;
+  transform: rotate(-45deg);
+  background-color: #121621;
+  box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 5px #888;
+  color: rgba(255,255,255,0.90)!important;
+  display: block;
+  padding: .6em 3.5em;
+  font: bold 15px sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px -1px 8px rgba(0,0,0,0.60);
+  user-select: none
+}

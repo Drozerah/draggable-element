@@ -2,6 +2,8 @@
 
 > Prototyping a Draggable DOM Element
 
+> TODO: write a better README.md
+
 
 Table of Contents
 -----------------

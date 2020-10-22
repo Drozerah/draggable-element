@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import './scss/utils';
-@import './scss/responsive';
+// @import './scss/responsive';
+@import './scss/drozerah';
 *{
   box-sizing: border-box;
 }
@@ -13,58 +13,29 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: flex-start;
   font-family: monospace;
+  h1{
+    margin-top: 50px;
+  }
+  footer{
+    margin-top: auto;
+    margin-bottom: 40px;
+  }
 }
 
-.draggable{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color:#E7E7E7;
-  width: 250px;
-  height: 50px;
-  font-weight: 600;
-  border-radius: 2px;
-  z-index: 0;
+.element_1, .element_2, .element_3 {
   div{
     width: 100%;
     text-align: center;
   }
-  .dragIndicator{
-    margin-left: auto;
-    cursor: move;
-    height: inherit;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #acabab;
-    width: 40px;
-  }
 }
-
-.draggable.dragActive{
-  background-color: rgb(0, 162, 255) !important;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-  .dragIndicator{
-    color: black;
-  }
-}
-
 .element_1{
-  top: 50px;
-  left: 50px;
-}
-
-.element_2{
   top: 150px;
   left: 150px;
 }
 
-.element_3{
+.element_2{
   top: 250px;
   left: 250px;
 }
-
