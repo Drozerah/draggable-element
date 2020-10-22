@@ -5,6 +5,7 @@ class Draggable {
     this.pos2 = 0 // element y calculated position
     this.pos3 = 0 // mouseX position when DragOnMouseDown start
     this.pos4 = 0 // mouseY position when DragOnMouseDown start
+    this.isLimit = true // default stay in the visible window
   }
 
   /**
@@ -47,24 +48,29 @@ class Draggable {
 
     const element = this.element
 
-    // set the draggable element new position:
-    if (element.offsetTop <= 0) { // top limit
-      element.style.top = 1 + 'px'
-      this.DragOnMouseUp()
-      element.style.top = 1 + 'px'
-    } else if (element.offsetLeft - this.pos1 + element.clientWidth >= window.innerWidth) { // right limit
-      element.style.right = 1 + 'px'
-      this.DragOnMouseUp()
-      element.style.right = 1 + 'px'
-    } else if (this.element.offsetTop - this.pos2 + element.clientHeight >= window.innerHeight) { // bottom limit
-      element.style.bottom = 1 + 'px'
-      this.DragOnMouseUp()
-      element.style.bottom = 1 + 'px'
-    } else if (element.offsetLeft <= 0) { // left limit
-      element.style.left = 1 + 'px'
-      this.DragOnMouseUp()
-      element.style.left = 1 + 'px'
-    } else { // drag the element inside limits
+    if (this.isLimit) {
+      // set the draggable element new position:
+      if (element.offsetTop <= 0) { // top limit
+        element.style.top = 1 + 'px'
+        this.DragOnMouseUp()
+        element.style.top = 1 + 'px'
+      } else if (element.offsetLeft - this.pos1 + element.clientWidth >= window.innerWidth) { // right limit
+        element.style.right = 1 + 'px'
+        this.DragOnMouseUp()
+        element.style.right = 1 + 'px'
+      } else if (this.element.offsetTop - this.pos2 + element.clientHeight >= window.innerHeight) { // bottom limit
+        element.style.bottom = 1 + 'px'
+        this.DragOnMouseUp()
+        element.style.bottom = 1 + 'px'
+      } else if (element.offsetLeft <= 0) { // left limit
+        element.style.left = 1 + 'px'
+        this.DragOnMouseUp()
+        element.style.left = 1 + 'px'
+      } else { // drag the element inside limits
+        element.style.top = (element.offsetTop - this.pos2) + 'px'
+        element.style.left = (element.offsetLeft - this.pos1) + 'px'
+      }
+    } else {
       element.style.top = (element.offsetTop - this.pos2) + 'px'
       element.style.left = (element.offsetLeft - this.pos1) + 'px'
     }
@@ -85,19 +91,40 @@ class Draggable {
   /**
    * startAt
    * - set the x and y start position of the draggable element
+   * - this method is chainable with isLimit method
    * @param {Object} option The starting x and y position
+   * @returns {this} the draggable element from the constructor
    */
   startAt (option) {
-    if (!option) throw new Error('missing Object parameter')
+    // console.log('ƒ startAt call') // !DEBUG
+    if (!option) throw new Error('missing function parameter')
     this.element.style.left = option.x + 'px'
     this.element.style.top = option.y + 'px'
+    return this
+  }
+
+  /**
+   * isLimited
+   * - set whether or not the draggable element must stay in the visible window
+   * @param {Boolean} boolean
+   * @returns {this} the draggable element from the constructor
+   */
+  isLimited (boolean) {
+    // console.log('ƒ isLimited call') // !DEBUG
+    if (typeof boolean !== 'boolean') throw new TypeError('parameter must be a boolean')
+    if (boolean) {
+      this.isLimit = boolean // true
+    } else {
+      this.isLimit = boolean // false
+    }
+    return this
   }
 
   /**
    * init
    * - initialize a Draggable element
-   * - this method is chainable with the startAt method
-   * @returns {this} the draggable element
+   * - this method is chainable with the startAt and isLimit methods
+   * @returns {this} the draggable element from the constructor
    */
   init () {
     // console.log('ƒ Draggable call init') // !DEBUG
