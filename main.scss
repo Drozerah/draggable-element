@@ -25,17 +25,27 @@ body{
 }
 
 .element_1, .element_2, .element_3 {
+  height: 50px;
   div{
     width: 100%;
     text-align: center;
   }
 }
+
 .element_1{
+  width: 400px;
   top: 150px;
   left: 150px;
 }
 
 .element_2{
-  top: 250px;
-  left: 250px;
+  width: 630px;
+  top: 150px;
+  left: 150px;
+}
+
+.element_3{
+  width: 530px;
+  top: 350px;
+  left: 350px;
 }
