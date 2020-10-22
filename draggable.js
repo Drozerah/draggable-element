@@ -20,6 +20,8 @@ class Draggable {
     if (!e.target.classList.contains('dragIndicator')) {
       return false
     } else {
+      // ordering element z-index
+      this.zOrder()
       // add class isDrag to this.element
       this.element.classList.add('dragActive')
       // get current mouse position
@@ -28,6 +30,24 @@ class Draggable {
       // ƒ to be call whenever the mouse move
       document.onmousemove = this.DragOnMouseMove.bind(this)
       document.onmouseup = this.DragOnMouseUp.bind(this)
+    }
+  }
+
+  /**
+   * zOrder
+   * - check all draggable elements by there computed CSS z-index properties
+   * - then get the higher existing z-index zIndexMax from group
+   * - then increase the current draggable element by zIndexMax + 1
+   */
+  zOrder () {
+    // console.log('ƒ zOrder call') // !DEBUG
+    const zIndexAll = []
+    Array.from(document.querySelectorAll('.draggable'))
+      .filter(element => element !== this.element) // exclude current draggable element
+      .forEach(element => zIndexAll.push(getComputedStyle(element).zIndex)) // update zIndexAll array
+    if (zIndexAll.length) {
+      const zIndexMax = Math.max.apply(Math, zIndexAll) // get largest z-index
+      this.element.style.zIndex = zIndexMax + 1 // increase current z-index
     }
   }
 
