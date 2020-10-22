@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Home</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">CLI Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/Drozerah/draggable-element"
+                        >
+                            Github
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="http://localhost:3000/"
+                        >
+                            Example Application
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Draggable.html">Draggable</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p></p>
+                    <h1>Home</h1>
+                </header>
+                
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Draggable Element</h1>
+<blockquote>
+<p>Prototyping a Draggable DOM Element</p>
+</blockquote>
+<blockquote>
+<p>TODO: write a better README.md</p>
+</blockquote>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#list-of-packages">List of Packages</a></li>
+<li><a href="#author">Author</a></li>
+<li><a href="#license">Lisence</a></li>
+</ul>
+<h2>Usage</h2>
+<ul>
+<li>import draggable.js ES6 class based module into your JS</li>
+<li>instanciate a new Draggable DOM element <code>new Draggable(your-DOM-element).init()</code>, the <code>.init()</code> chainable method is required to make <code>your-DOM-element</code> a draggable element.
+<ul>
+<li>the optional <code>.isLimited()</code> chainable method will set whether or not the draggable element must stay in the visible window based on a boolean argument</li>
+<li>the optional <code>.startAt({ x: 350, y: 350 })</code> chainable method give the ability to define the draggable element position</li>
+</ul>
+</li>
+</ul>
+<p><strong>index.html</strong></p>
+<pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
+&lt;html lang=&quot;en&quot;>
+&lt;head>
+    &lt;meta charset=&quot;UTF-8&quot;>
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/main.css&quot;>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/draggable.css&quot;>
+    &lt;!-- IE11 polyfill -->
+    &lt;script crossorigin=&quot;anonymous&quot; src=&quot;https://polyfill.io/v3/polyfill.min.js?features=es6%2CArray.from%2CArray.prototype.forEach%2CArray.prototype.filter&quot;>&lt;/script>
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;main>
+        &lt;div class=&quot;element_1 draggable noselect&quot;>
+            &lt;div>Draggable Element 1&lt;/div>
+            &lt;span class=&quot;material-icons dragIndicator&quot;>drag_indicator&lt;/span>
+        &lt;/div>
+        &lt;div class=&quot;element_2 draggable noselect&quot;>
+            &lt;div>Draggable Element 2&lt;/div>
+            &lt;span class=&quot;material-icons dragIndicator&quot;>drag_indicator&lt;/span>
+        &lt;/div>
+    &lt;/main>
+    &lt;footer>
+    &lt;/footer>
+    &lt;script type=&quot;module&quot;>
+        import Draggable from './draggable.js'
+        new Draggable(document.querySelector('.element_1')).init()
+        new Draggable(document.querySelector('.element_2'))
+            .init()
+            .isLimited(false)
+            .startAt({ x: 350, y: 350 })
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+</code></pre>
+<h2>List of Packages</h2>
+<p><strong>devDependencies</strong></p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/SoftwareBrothers/better-docs#readme">better-docs</a></td>
+<td>JSdoc theme</td>
+</tr>
+<tr>
+<td><a href="https://eslint.org">eslint</a></td>
+<td>An AST-based pattern checker for JavaScript</td>
+</tr>
+<tr>
+<td><a href="https://github.com/standard/eslint-config-standard">eslint-config-standard</a></td>
+<td>JavaScript Standard Style - ESLint Shareable Config</td>
+</tr>
+<tr>
+<td><a href="https://github.com/benmosher/eslint-plugin-import">eslint-plugin-import</a></td>
+<td>Import with sanity</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mysticatea/eslint-plugin-node#readme">eslint-plugin-node</a></td>
+<td>Additional ESLint's rules for Node.js</td>
+</tr>
+<tr>
+<td><a href="https://github.com/xjamundx/eslint-plugin-promise#readme">eslint-plugin-promise</a></td>
+<td>Enforce best practices for JavaScript promises</td>
+</tr>
+<tr>
+<td><a href="https://github.com/standard/eslint-plugin-standard#readme">eslint-plugin-standard</a></td>
+<td>ESlint Plugin for the Standard Linter</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jsdoc/jsdoc#readme">jsdoc</a></td>
+<td>An API documentation generator for JavaScript</td>
+</tr>
+</tbody>
+</table>
+<div align="right">
+  List of Packages generated by <a href="https://github.com/Drozerah/dep-to-doc-cli.git">Dep to Doc CLI</a> 1.2.0
+</div>
+<h2>Author</h2>
+<ul>
+<li>Thomas G. aka Drozerah - <a href="https://github.com/Drozerah">GitHub</a></li>
+</ul>
+<h2>License</h2>
+<ul>
+<li><a href="https://github.com/Drozerah/draggable-element/blob/master/LICENSE">MIT</a> © Thomas G. aka Drozerah</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>draggable.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><ul>
+<li>This class instanciate a draggable element</li>
+</ul></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.1.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Drozerah</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="draggable.js.html" class="button">View Source</a>
+            <span>
+                <a href="draggable.js.html">draggable.js</a>, <a href="draggable.js.html#line6">line 6</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

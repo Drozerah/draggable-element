@@ -1,0 +1,39 @@
+{
+  "tags": {
+    "allowUnknownTags": ["category"]
+  },
+  "source": {
+    "include": ["."],
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules|public)"
+  },
+  "recurseDepth": 10,
+  "opts": {
+    "recurse": true,
+    "verbose": true,
+    "destination": "./docs/",
+    "readme": "./readme.md",
+    "template": "node_modules/better-docs"
+  },
+  "plugins": ["plugins/markdown", "node_modules/better-docs/category"],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "better-docs": {
+      "search": false,
+      "name": "CLI Documentation",
+      "title": "",
+      "___css": "style.css",
+      "hideGenerator": true,
+      "navLinks": [{
+          "label": "Github",
+          "href": "https://github.com/Drozerah/draggable-element"
+        },
+        {
+          "label": "Example Application",
+          "href": "http://localhost:3000/"
+        }
+      ]
+    }
+  }
+}
