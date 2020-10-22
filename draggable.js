@@ -1,8 +1,8 @@
 class Draggable {
   constructor (element) {
     this.element = element
-    this.pos1 = 0
-    this.pos2 = 0
+    this.pos1 = 0 // element x calculated position
+    this.pos2 = 0 // element y calculated position
     this.pos3 = 0 // mouseX position when DragOnMouseDown start
     this.pos4 = 0 // mouseY position when DragOnMouseDown start
   }
@@ -97,7 +97,7 @@ class Draggable {
    * init
    * - initialize a Draggable element
    * - this method is chainable with the startAt method
-   * @returns {this} the draggable ement
+   * @returns {this} the draggable element
    */
   init () {
     // console.log('ƒ Draggable call init') // !DEBUG
@@ -107,8 +107,4 @@ class Draggable {
   }
 }
 
-// new Draggable(document.querySelector('.element_2')).init()
-// new Draggable(document.querySelector('.element_3')).init()
-// new Draggable(document.querySelector('.element_4'))
-//   .init()
-//   .startAt({ x: 350, y: 350 })
+export default Draggable

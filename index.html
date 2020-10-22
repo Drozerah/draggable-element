@@ -28,8 +28,8 @@
         <span class="material-icons dragIndicator">drag_indicator</span>
     </div>
     <script src="index.js"></script>
-    <script src="draggable.js"></script>
-    <script>
+    <script type="module">
+        import Draggable from './draggable.js'
         new Draggable(document.querySelector('.element_2')).init()
         new Draggable(document.querySelector('.element_3')).init()
         new Draggable(document.querySelector('.element_4'))
