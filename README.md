@@ -8,9 +8,58 @@
 Table of Contents
 -----------------
 
+- [Usage](#usage)
 - [List of Packages](#list-of-packages)
 - [Author](#author)
 - [Lisence](#license)
+
+Usage
+-----
+
+- import draggable.js ES6 class based module into your JS
+- instanciate a new Draggable DOM element ``new Draggable(your-DOM-element).init()``, the `.init()` chainable method is required to make `your-DOM-element` a draggable element.
+  - the optional `.isLimited()` chainable method will set whether or not the draggable element must stay in the visible window based on a boolean argument
+  - the optional `.startAt({ x: 350, y: 350 })` chainable method give the ability to define the draggable element position
+
+**index.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/draggable.css">
+    <!-- IE11 polyfill -->
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CArray.from%2CArray.prototype.forEach%2CArray.prototype.filter"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="element_1 draggable noselect">
+            <div>Draggable Element 1</div>
+            <span class="material-icons dragIndicator">drag_indicator</span>
+        </div>
+        <div class="element_2 draggable noselect">
+            <div>Draggable Element 2</div>
+            <span class="material-icons dragIndicator">drag_indicator</span>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script type="module">
+        import Draggable from './draggable.js'
+        new Draggable(document.querySelector('.element_1')).init()
+        new Draggable(document.querySelector('.element_2'))
+            .init()
+            .isLimited(false)
+            .startAt({ x: 350, y: 350 })
+    </script>
+</body>
+</html>
+```
+
 
 
 List of Packages
