@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="src/css/main.css">
+    <!-- IE11 polyfill -->
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CArray.from%2CArray.prototype.forEach%2CArray.prototype.filter"></script>
     <title>Document</title>
 </head>
 <body>
@@ -33,9 +35,9 @@
         new Draggable(document.querySelector('.element_2')).init()
         new Draggable(document.querySelector('.element_3')).init()
         new Draggable(document.querySelector('.element_4'))
-        .init()
-        .isLimited(false)
-        .startAt({ x: 350, y: 350 })
+            .init()
+            .isLimited(false)
+            .startAt({ x: 350, y: 350 })
     </script>
 </body>
 </html>
