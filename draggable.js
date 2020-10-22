@@ -3,21 +3,43 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 
+
+/**
+ * Creates a new draggable element.
+ *
+ * @class
+ * @fileOverview Various tool functions.
+ * @author Drozerah
+ * @version 1.1.0
+ * @description - This class instanciate a draggable element
+ */
 class Draggable {
+  /**
+   * @constructs Draggable
+   * @param  {Object} element - The DOM element to instanciate
+   * @property {Number} pos1 - The element x calculated position
+   * @property {Number} pos2 - The element y calculated position
+   * @property {Number} pos3 - The mouse x position when DragOnMouseDown start
+   * @property {Number} pos4 - The mouse y position when DragOnMouseDown start
+   * @property {Boolean} isLimit - Define whether or not the element stay in the visible window
+   * @description - This class instanciate a draggable element
+   */
   constructor (element) {
     this.element = element
-    this.pos1 = 0 // element x calculated position
-    this.pos2 = 0 // element y calculated position
-    this.pos3 = 0 // mouseX position when DragOnMouseDown start
-    this.pos4 = 0 // mouseY position when DragOnMouseDown start
-    this.isLimit = true // default stay in the visible window
+    this.pos1 = 0
+    this.pos2 = 0
+    this.pos3 = 0
+    this.pos4 = 0
+    this.isLimit = true
   }
 
   /**
    * DragOnMouseDown
-   * - method to be called when the mouse is down on the drag element
-   * @param {onmousedown} e - The observable mouse down event.
+   *
+   * @description - Method to be called when the mouse is down on the draggable element
+   * @param {onmousedown} e - The observable on mouse down event.
    * @listens onmousedown
+   * @returns {void}
    */
   DragOnMouseDown (e) {
     // console.log('ƒ DragOnMouseDown call') // !DEBUG
@@ -40,9 +62,12 @@ class Draggable {
 
   /**
    * zOrder
+   * 
    * - check all draggable elements by there computed CSS z-index properties
    * - then get the higher existing z-index zIndexMax from group
    * - then increase the current draggable element by zIndexMax + 1
+   * @description - Order multiple draggagle elements by there z-index CSS properties
+   * @returns {void}
    */
   zOrder () {
     // console.log('ƒ zOrder call') // !DEBUG
@@ -58,9 +83,11 @@ class Draggable {
 
   /**
    * DragOnMouseMove
-   * - method to be called to move the draggable element
+   *
+   * @description - Method to be called to move the draggable element
    * @param {onmousemove} e - The observable mouse move event.
    * @listens onmousemove
+   * @returns {void}
    */
   DragOnMouseMove (e) {
     // console.log('ƒ DragOnMouseMove call') // !DEBUG
@@ -103,7 +130,9 @@ class Draggable {
 
   /**
    * DragOnMouseUp
-   * - stop moving the element when the mouse button is released
+   *
+   * @description - Stop moving the element when the mouse button is realeased
+   * @returns {void}
    */
   DragOnMouseUp () {
     // console.log('ƒ DragOnMouseUp call') // !DEBUG
@@ -115,10 +144,11 @@ class Draggable {
 
   /**
    * startAt
-   * - set the x and y start position of the draggable element
+   * 
    * - this method is chainable with isLimit method
+   * @description - Set the x and y start position of the draggable element
    * @param {Object} option The starting x and y position
-   * @returns {this} the draggable element from the constructor
+   * @returns {this} The draggable element from the constructor
    */
   startAt (option) {
     // console.log('ƒ startAt call') // !DEBUG
@@ -130,9 +160,10 @@ class Draggable {
 
   /**
    * isLimited
-   * - set whether or not the draggable element must stay in the visible window
+   *
+   * @description - Set whether or not the draggable element must stay in the visible window
    * @param {Boolean} boolean
-   * @returns {this} the draggable element from the constructor
+   * @returns {this} The draggable element from the constructor
    */
   isLimited (boolean) {
     // console.log('ƒ isLimited call') // !DEBUG
@@ -147,9 +178,10 @@ class Draggable {
 
   /**
    * init
-   * - initialize a Draggable element
+   *
    * - this method is chainable with the startAt and isLimit methods
-   * @returns {this} the draggable element from the constructor
+   * @description - Initialize a draggable element
+   * @returns {this} The draggable element from the constructor
    */
   init () {
     // console.log('ƒ Draggable call init') // !DEBUG
